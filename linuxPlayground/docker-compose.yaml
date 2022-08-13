@@ -1,0 +1,9 @@
+services:
+  lab:
+    image: lab
+    volumes:
+      - home:/home/lab
+
+
+volumes:
+  home: {}

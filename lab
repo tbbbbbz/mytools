@@ -1,0 +1,5 @@
+#!/bin/bash
+SRC_DIR=$(dirname $0)/linuxPlayground
+(cd $SRC_DIR && make labImage)
+(cd $SRC_DIR && docker-compose run --rm lab)
+
