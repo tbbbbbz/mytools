@@ -1,5 +1,16 @@
 #!/bin/bash
 SRC_DIR=$(dirname $0)/linuxPlayground
+
+# setup login as root 
+ROOT_FLAG=""
+if [ $1 == "root" ]
+then
+	ROOT_FLAG="-u 0"
+fi
+
+# setup image
 (cd $SRC_DIR && make labImage)
-(cd $SRC_DIR && docker-compose run --rm lab)
+
+# run container
+(cd $SRC_DIR && docker-compose run $ROOT_FLAG --rm lab)
 
