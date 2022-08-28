@@ -1,4 +1,14 @@
 #!/bin/bash
+
+HELPER_MSG="lab [root]"
+
+if [ "$1" == "-h" ]
+then
+	echo $HELPER_MSG
+	exit 0
+fi
+
+
 SRC_DIR=$(dirname $0)/linuxPlayground
 
 # setup login as root 
